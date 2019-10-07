@@ -77,10 +77,11 @@ WSGI_APPLICATION = 'GalleryHub.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'gallery',
-        'USER': '<yomi>',
-    'PASSWORD':'<1234>',
+        'USER': 'moringa',
+        'HOST': 'localhost',
+    'PASSWORD':'1234',
     }
 }
 
@@ -122,3 +123,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
