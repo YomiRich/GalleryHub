@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
-
+from decouple import config, Csv  
 import dj_database_url  
 import django_heroku  
 
@@ -90,7 +90,7 @@ DATABASES = {
 }
 
 
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
+
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
