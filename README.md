@@ -12,7 +12,7 @@ The user can:
 * View image details
 ## Setup/Installation Requirements
 ### Prerequisites
-*django 1.11.8
+django 1.11.8
 * python3.6
 * pip
 * Virtual environment(virtualenv)
@@ -20,14 +20,14 @@ The user can:
 ### Cloning and running
 * Clone the application using git clone(this copies the app onto your device). In terminal:
 
-          $ git clone https://github.com/YomiRich/GalleryHub.git
-          $ cd GalleryHub
+          * git clone https://github.com/YomiRich/GalleryHub.git
+          * cd GalleryHub
 
 * Creating the virtual environment
 
-          $ python3.6 -m venv --without-pip virtual
-          $ source virtual/bin/env
-          $ curl https://bootstrap.pypa.io/get-pip.py | python
+          * python3.6 -m venv --without-pip virtual
+          * source virtual/bin/env
+          * curl https://bootstrap.pypa.io/get-pip.py | python
 
 * Installing Django and other Modules
 
@@ -61,4 +61,5 @@ The user can:
 
 ### License
 MIT License
-Copyright (c) {2019} (YomiRich)[https://github.com/YomiRich/LICENSE/blob/master/LICENSE]
+Copyright (c) {2019} (YomiRich) 
+[https://github.com/YomiRich/LICENSE/blob/master/LICENSE]
