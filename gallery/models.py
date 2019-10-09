@@ -1,5 +1,9 @@
 from django.db import models
 
+# Q objects to search for multiple terms
+from django.db.models import Q
+
+
 # Create your models here.
 class Category (models.Model):
     category = models.CharField(max_length =30)
@@ -22,7 +26,7 @@ class Location (models.Model):
         self.save()
         
 class Image(models.Model):
-    image = models.ImageField(upload_to='images/',default='DEFAULT VALUE')
+    image = models.ImageField(upload_to='images/',default='',blank=True)
     image_name =models.CharField(max_length =60) 
     image_description = models.CharField(max_length=255)
     image_location = models.ForeignKey('Location',on_delete=models.CASCADE,)
@@ -61,5 +65,5 @@ class Image(models.Model):
     
     @classmethod
     def search_by_category(cls,search_term):
-        image = Image.objects.filter(category__icontains=search_term).all()
-        return image
+        images = Image.objects.filter(Q(image_category__category__icontains=search_term)| Q(image_location__location__icontains=search_term) |Q(image_name__icontains=search_term))
+        return images
