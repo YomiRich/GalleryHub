@@ -29,7 +29,7 @@ class Image(models.Model):
     image = models.ImageField(upload_to='images/',default='',blank=True)
     image_name =models.CharField(max_length =60) 
     image_description = models.CharField(max_length=255)
-    image_location = models.ForeignKey('Location',on_delete=models.CASCADE,)
+    image_location = models.ForeignKey('Location',on_delete=models.SET_NULL,null=True)
     image_category = models.ManyToManyField(Category)
     
     def __str__(self):
